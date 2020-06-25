@@ -45,7 +45,10 @@ Mainwindow::Mainwindow(QMainWindow* parent)
             temp->setTextAlignment(Qt::AlignCenter);
             // filling each cell with an empty string of Qtablewidgetitem, effectively a qlineedit
 
-            if (((j < 3 || j>5) && (i < 3)) || ((j < 3 || j>5) && (i > 5)) || ((j > 2 && j < 6) && (i < 6 && i>2))) {
+            if ((j > 2 && j < 6) && (i < 3 || i>5)) {
+                temp->setBackground(QBrush(Qt::yellow));
+            }
+            else if (!((j > 2 && j < 6) || (i < 3 || i>5))) {
                 temp->setBackground(QBrush(Qt::yellow));
             }
             else {
